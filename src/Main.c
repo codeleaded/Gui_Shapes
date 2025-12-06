@@ -40,7 +40,9 @@ Vec2* Selected = NULL;
 
 void Setup(AlxWindow* w){
     tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
-	//TransformedView_Focus(&tv,&Me.p);
+	//TransformedView_Focus(&tv,&Me.p,Me.d);
+    TransformedView_Offset(&tv,(Vec2){ -0.5f,-0.5f });
+    TransformedView_Zoom(&tv,(Vec2){ 1.0f,1.0f });
 
     Points = Vector_New(sizeof(Vec2));
     Vector_PushCount(&Points,(Vec2[14]){ 0 },14);
